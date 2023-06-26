@@ -34,19 +34,19 @@ https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_
 
 ## Commands of "CRYPTO MENU"
 
-# Reload cryptocurrency
+### Reload cryptocurrency
 
 Reloading current data from the cryptocurrency site.
 
-# Add crypto to "Favorites"
+### Add crypto to "Favorites"
 
 Add cryptocurrencies to a "Favorites" list, stored in the local storage of the browser.
 
-# Ethereum balance
+### Ethereum balance
 
 Display the current Ethereum balance of a user-entered Ethereum address (web3.js library is used).
 
-# Send Ether
+### Send Ether
 
 Send Ether from one user-entered address to another useing Goerli testnet.
 
