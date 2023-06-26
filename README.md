@@ -49,8 +49,3 @@ Display the current Ethereum balance of a user-entered Ethereum address (web3.js
 ### Send Ether
 
 Send Ether from one user-entered address to another useing Goerli testnet.
-
-## Comment:
-
-This is a test version of the project. It has my infura_project_id set for testing purposes. 
-For productive use, you need to add a real project-id input (I can do it if necessary).

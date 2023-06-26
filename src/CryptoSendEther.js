@@ -9,15 +9,15 @@ import DialogActions from "@mui/material/DialogActions"
 import Button from "@mui/material/Button"
 import Web3 from "web3"
 
-const infura_project_id = 'e9d73543aef54a9fa358d7f7ac526198'        // just an example
+const infura_project_id = 'e9d73543aef54a9fa358d7f7ac526198'        //  just an example for testing
 
 const CryptoSendEther = (props) => {
     const { open, closeDialog, openAlert } = props
 
-    async function sendEther(fromAddress, toAddress, privateKey, amount) {
+    async function sendEther(projectId, fromAddress, toAddress, privateKey, amount) {
         try {
             // Create a web3 instance connected to the Goerli testnet
-            const web3 = new Web3(`https://goerli.infura.io/v3/${infura_project_id}`)
+            const web3 = new Web3(`https://goerli.infura.io/v3/${projectId}`)
 
             // Get the account object from the private key
             const account = web3.eth.accounts.privateKeyToAccount(privateKey)
@@ -69,6 +69,17 @@ const CryptoSendEther = (props) => {
                 <TextField
                     autoFocus
                     margin="dense"
+                    id={"id"}
+                    label={"Infura Project Id"}
+                    type={"text"}
+                    fullWidth
+                    variant="standard"
+                />
+            </DialogContent>
+            <DialogContent>
+                <TextField
+                    autoFocus
+                    margin="dense"
                     id={"from"}
                     label={"From Address"}
                     type={"text"}
@@ -110,7 +121,8 @@ const CryptoSendEther = (props) => {
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => sendEther(document.getElementById("from").value,
+                <Button onClick={() => sendEther(document.getElementById("id").value,
+                                            document.getElementById("from").value,
                                             document.getElementById("to").value,
                                             document.getElementById("key").value,
                                             document.getElementById("amount").value
